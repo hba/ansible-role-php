@@ -1,5 +1,6 @@
 ---
 - name: Ensure PHP packages are installed.
+  become: true
   package:
     name: "{{ php_packages + php_packages_extra }}"
     state: "{{ php_packages_state }}"

@@ -7,6 +7,7 @@
   with_items: "{{ php_extension_conf_paths }}"
 
 - name: Remove any non-role-supplied APCu config files.
+  become: true
   file:
     path: "{{ item.1.path }}"
     state: absent

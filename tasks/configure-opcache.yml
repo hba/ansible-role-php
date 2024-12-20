@@ -17,6 +17,7 @@
   notify: restart webserver
 
 - name: Ensure OpCache config file is present.
+  become: true
   template:
     src: opcache.ini.j2
     dest: "{{ item }}/{{ php_opcache_conf_filename }}"
