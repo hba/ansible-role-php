@@ -18,6 +18,7 @@
   notify: restart webserver
 
 - name: Ensure APCu config file is present.
+  become: true
   template:
     src: apc.ini.j2
     dest: "{{ item }}/{{ php_apc_conf_filename }}"
